@@ -1,0 +1,249 @@
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+main {
+  font-family: 'Open Sans', 'helvetica nue', helvetica;
+  font-size: 14px;
+  font-weight: 400;
+  display: flex;
+}
+* {
+  transition: all ease-out 100ms;
+}
+.l--grid-half {
+  width: 49%;
+  display: inline-block;
+}
+.icon:after,
+.icon:before {
+  font-family: 'Duo Admin Icons' !important;
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 1.25em;
+}
+.icon:after {
+  padding-left: 0.5em;
+}
+.icon:before {
+  padding-right: 0.5em;
+}
+.icon:before:hover, .icon:after:hover {
+  box-shadow: none;
+}
+button.icon:after, button.icon:before {
+  vertical-align: middle;
+}
+a.icon:after, a.icon:before {
+  vertical-align: text-bottom;
+}
+button {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1em;
+  height: 35px;
+  border-radius: 3px;
+  border: 1px solid #405665;
+  padding: 9px 15px;
+  color: #444;
+  background-color: #fff;
+  border-collapse: separate;
+}
+button:hover {
+  /*border-bottom-width: 3px;
+  border-bottom-color: currentColor;*/
+  -webkit-box-shadow: 0px 3px 0px 0px currentColor;
+  -moz-box-shadow: 0px 3px 0px 0px currentColor;
+  box-shadow: 0px 3px 0px 0px currentColor;
+}
+button:focus {
+  -webkit-box-shadow: 0px 0px 2px 2px currentColor;
+  -moz-box-shadow: 0px 0px 2px 2px currentColor;
+  box-shadow: 0px 0px 2px 2px currentColor;
+  outline: none;
+}
+a {
+  color: #444;
+  text-decoration: underline;
+}
+a:hover {
+  text-decoration: none;
+}
+a:focus {
+  text-shadow: 0px 0px 5px #444;
+  box-shadow: none;
+  outline: none;
+}
+button:hover,
+a:hover {
+  /*font-weight: 500;*/
+  cursor: pointer;
+  box-shadow: 0px 3px 0px 0px currentColor;
+}
+a.c--destruction {
+  color: #D4423B;
+}
+a.c--destruction:focus {
+  text-shadow: 0px 0px 5px #D4423B;
+}
+button.c--destruction:before {
+  content: '\e043';
+  display: inline-block;
+  color: #D4423B;
+  font-size: 1.2em;
+  font-weight: bold !important;
+  padding-right: 0;
+}
+.c--destruction:hover {
+  border-color: #D4423B;
+  box-shadow: 0px 3px 0px 0px #D4423B;
+}
+.c--cta {
+  color: #fff;
+  background-color: #405665;
+}
+.c--cta:hover {
+  background-color: #31424E;
+  border-color: #10161A;
+  box-shadow: 0px 3px 0px 0px #10161A;
+}
+.c--cta:focus {
+  box-shadow: 0px 0px 2px 2px #405665;
+}
+.c--disabled {
+  background-color: #EFEFEF;
+  border-color: #CCCCCC;
+}
+.c--disabled:hover {
+  border-bottom-width: 1px;
+  border-bottom-color: #CCC;
+  box-shadow: none;
+  font-weight: 400;
+  cursor: default;
+}
+.c--dropdown {
+  position: relative;
+  width: auto;
+  display: inline-block;
+}
+.a--dropdown-trigger {
+  text-decoration: none;
+}
+.a--dropdown-trigger:after {
+  content: "\e02f";
+  vertical-align: text-bottom;
+}
+.a--dropdown-content {
+  position: relative;
+  opacity: 0;
+  height: 0;
+  overflow: hidden;
+  display: inline-block;
+  padding: 15px;
+  border-radius: 3px;
+  border: 1px solid #405665;
+  width: 110%;
+  margin-top:10px;
+  box-shadow: 2px 2px 2px 0px #ccc;
+}
+.a--dropdown-content:before {
+  position: absolute;
+  background-color: #fff;
+  bottom: 95%;
+  right: 11%;
+  content: '\e108';
+  font-family: 'Duo Admin Icons';
+}
+.a--dropdown-content dd {
+  margin-left: 0;
+}
+.a--dropdown-checkbox {
+  position: absolute;
+  top:0;
+  left:0;
+  opacity:0;
+  height: 20px;
+  width: 100%;
+  cursor: pointer;
+}
+.a--dropdown-checkbox:checked ~ .a--dropdown-content {
+  opacity: 1;
+  height: auto;
+  overflow: visible;
+}
+
+.c--nav-back:before, .c--pag-back:before {
+  content: "\e02c";
+  text-decoration: none;
+  box-shadow: none;
+  display: inline-block;
+}
+.c--continue:after, .c--pag-forward:after {
+  content: "\e049";
+  text-decoration: none;
+  box-shadow: none;
+  display: inline-block;
+}
+.c--pag-current {
+  border: 1px solid currentColor;
+  border-radius: 50%;
+  padding: 0.125em 0.5em;
+  line-height: 1em;
+  text-decoration: none;
+}
+.c--pag-current:hover {
+  border-color: #405665;
+  background-color: #405665;
+  color: #fff;
+  box-shadow: none;
+}
+
+
+/* Section 2 styles */
+.set-2 a:focus {
+  text-shadow: 0px 0px 2px #444;
+  box-shadow: none;
+  outline: none;
+}
+.set-2 a.c--destruction:focus {
+  text-shadow: 0px 0px 2px #D4423B;
+  box-shadow: none;
+  outline: none;
+}
+.set-2 button:hover {
+  box-shadow: 0px 3px 0px 0px #1E282F;
+  background-color: #405665;
+  color: #fff;
+}
+.set-2 button.c--cta:hover {
+  background-color: #31424E;
+  border-color: #31424E;
+  box-shadow: 0px 3px 0px 0px #10161A;
+}
+.set-2 button.c--destruction:hover {
+  box-shadow: 0px 3px 0px 0px #A3312B;
+  color: #fff;
+  background-color: #D4423B;
+}
+.set-2 button.c--destruction:hover:before {
+  color: #fff;
+}
+.set-2 button.c--disabled {
+  background-color: #EFEFEF;
+  border-color: #CCCCCC;
+}
+.set2 button.c--disabled:hover {
+  border-bottom-width: 1px;
+  border-bottom-color: #CCC;
+  box-shadow: none;
+  font-weight: 400;
+  cursor: default;
+}
