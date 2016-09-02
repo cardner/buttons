@@ -58,8 +58,6 @@ button {
   border-collapse: separate;
 }
 button:hover {
-  /*border-bottom-width: 3px;
-  border-bottom-color: currentColor;*/
   -webkit-box-shadow: 0px 3px 0px 0px currentColor;
   -moz-box-shadow: 0px 3px 0px 0px currentColor;
   box-shadow: 0px 3px 0px 0px currentColor;
@@ -84,7 +82,6 @@ a:focus {
 }
 button:hover,
 a:hover {
-  /*font-weight: 500;*/
   cursor: pointer;
   box-shadow: 0px 3px 0px 0px currentColor;
 }
@@ -100,6 +97,9 @@ button.c--destruction:before {
   color: #D4423B;
   font-size: 1.2em;
   font-weight: bold !important;
+  padding-right: 6px;
+}
+button.a--destruction-ico:before {
   padding-right: 0;
 }
 .c--destruction:hover {
@@ -205,45 +205,86 @@ button.c--destruction:before {
   color: #fff;
   box-shadow: none;
 }
+.a--pag-num {
+  padding: 0.125em 0.5em;
+  text-decoration: none;
+}
 
 
 /* Section 2 styles */
 .set-2 a:focus {
-  text-shadow: 0px 0px 2px #444;
+  text-shadow: 0px 0px 1px #444;
   box-shadow: none;
   outline: none;
 }
 .set-2 a.c--destruction:focus {
-  text-shadow: 0px 0px 2px #D4423B;
+  text-shadow: 0px 0px 1px #D4423B;
   box-shadow: none;
   outline: none;
 }
 .set-2 button:hover {
-  box-shadow: 0px 3px 0px 0px #1E282F;
-  background-color: #405665;
+  background-color: #476376;
+  border-color: #476376;
+  box-shadow: 0px 3px 0px 0px #31424E;
   color: #fff;
 }
 .set-2 button.c--cta:hover {
-  background-color: #31424E;
-  border-color: #31424E;
-  box-shadow: 0px 3px 0px 0px #10161A;
+  background-color: #476376;
+  border-color: #476376;
+  box-shadow: 0px 3px 0px 0px #31424E;
 }
 .set-2 button.c--destruction:hover {
   box-shadow: 0px 3px 0px 0px #A3312B;
   color: #fff;
   background-color: #D4423B;
+  border-color: #D4423B;
+  transition: color ease-in 150ms;
 }
 .set-2 button.c--destruction:hover:before {
   color: #fff;
 }
 .set-2 button.c--disabled {
   background-color: #EFEFEF;
-  border-color: #CCCCCC;
+  border-color: #CCC;
+  cursor: not-allowed;
 }
-.set2 button.c--disabled:hover {
+.set-2 button.c--disabled:hover {
   border-bottom-width: 1px;
   border-bottom-color: #CCC;
   box-shadow: none;
   font-weight: 400;
-  cursor: default;
+  cursor: not-allowed;
+  color: currentColor;
+}
+
+.set-2 .a--dropdown-content {
+  width: 0;
+  right: 0%;
+  left: 100%;
+  top: 90%;
+  height: 100%;
+  max-height: 0;
+  position: absolute;
+  transition: width linear 200ms,
+              height linear 200ms,
+              position linear 200ms,
+              opacity ease-in 400ms,
+              left linear 200ms,
+              top linear 200ms,
+              right linear 200ms,
+              bottom linear 200ms,
+              max-height linear 300ms,
+              overflow linear 400ms;
+}
+.set-2 .a--dropdown-checkbox:checked ~ .a--dropdown-content {
+  width: 110%;
+  left: 0;
+  right: -10%;
+  max-height:10vh;
+}
+.set-2 .c--pag-current {
+  border: none;
+  border-radius: 0;
+  font-weight: 500;
+  box-shadow: 0px 3px 0px 0px currentColor;
 }
