@@ -10,7 +10,7 @@ main {
   font-weight: 400;
   display: flex;
 }
-* {
+main section * {
   transition: all ease-out 100ms;
 }
 .l--grid-half {
@@ -230,6 +230,8 @@ button.a--destruction-ico:before {
   border-color: #476376;
   box-shadow: 0px 3px 0px 0px #31424E;
   color: #fff;
+  transition: color ease-in 200ms,
+              box-shadow linear 300ms;
 }
 .set-2 button.c--cta:hover {
   background-color: #476376;
@@ -241,17 +243,49 @@ button.a--destruction-ico:before {
   color: #fff;
   background-color: #D4423B;
   border-color: #D4423B;
-  transition: color ease-in 120ms,
-              box-shadow linear 200ms;
 }
 .set-2 button.c--destruction:hover:before {
   color: #fff;
-  transition: color ease-in 150ms;
+  transition: color ease-in 200ms;
 }
 .set-2 button.c--disabled {
   background-color: #EFEFEF;
   border-color: #CCC;
   cursor: not-allowed;
+  position: relative;
+}
+.set-2 .c--disabled i {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+  right: 0;
+  left: 113%;
+  top: 0;
+  transition: opacity ease-in 200ms,
+              background-color linear 50ms;
+  padding: 1em;
+  border: 1px solid currentColor;
+  border-radius: 3px;
+  visibility: hidden;
+  background-color: #fff;
+  line-height: 1.5em;
+}
+.set-2 .c--disabled i:before {
+  position: absolute;
+  background-color: #fff;
+  top: 10%;
+  left: -6%;
+  content: '\e109';
+  font-style: normal;
+  font-family: 'Duo Admin Icons';
+  line-height: 1rem;
+}
+.set-2 .c--disabled:hover i {
+  width: 200%;
+  height: auto;
+  opacity: 1;
+  visibility: visible;
 }
 .set-2 button.c--disabled:hover {
   border-bottom-width: 1px;
@@ -270,22 +304,22 @@ button.a--destruction-ico:before {
   height: 100%;
   max-height: 0;
   position: absolute;
-  transition: width linear 200ms,
-              height linear 200ms,
-              position linear 200ms,
-              opacity ease-in 400ms,
-              left linear 200ms,
-              top linear 200ms,
-              right linear 200ms,
-              bottom linear 200ms,
-              max-height linear 300ms,
-              overflow linear 400ms;
+  transition: width linear 100ms,
+              height linear 100ms,
+              position linear 100ms,
+              opacity ease-in 300ms,
+              left linear 100ms,
+              top linear 100ms,
+              right linear 100ms,
+              bottom linear 100ms,
+              max-height linear 200ms,
+              overflow linear 600ms;
 }
 .set-2 .a--dropdown-checkbox:checked ~ .a--dropdown-content {
   width: 110%;
   left: 0;
   right: -10%;
-  max-height:10vh;
+  max-height:20vw;
 }
 .set-2 .c--pag-current {
   border: none;
