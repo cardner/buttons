@@ -76,13 +76,14 @@ a:hover {
   text-decoration: none;
 }
 a:focus {
-  text-shadow: 0px 0px 5px #444;
+  text-shadow: 0px 0px 1px currentColor;
   box-shadow: none;
   outline: none;
 }
 button:hover,
 a:hover {
   cursor: pointer;
+  transition: box-shadow linear 150ms;
   box-shadow: 0px 3px 0px 0px currentColor;
 }
 a.c--destruction {
@@ -192,6 +193,10 @@ button.a--destruction-ico:before {
   box-shadow: none;
   display: inline-block;
 }
+.c--pag-back:before,
+.c--pag-forward:after {
+  padding: 0;
+}
 .c--pag-current {
   border: 1px solid currentColor;
   border-radius: 50%;
@@ -213,14 +218,12 @@ button.a--destruction-ico:before {
 
 /* Section 2 styles */
 .set-2 a:focus {
-  text-shadow: 0px 0px 1px #444;
+  text-shadow: none;
   box-shadow: none;
   outline: none;
-}
-.set-2 a.c--destruction:focus {
-  text-shadow: 0px 0px 1px #D4423B;
-  box-shadow: none;
-  outline: none;
+  border: 1px solid currentColor;
+  border-radius: 3px;
+  padding: 0.125em 0.5em;
 }
 .set-2 button:hover {
   background-color: #476376;
@@ -238,10 +241,12 @@ button.a--destruction-ico:before {
   color: #fff;
   background-color: #D4423B;
   border-color: #D4423B;
-  transition: color ease-in 150ms;
+  transition: color ease-in 120ms,
+              box-shadow linear 200ms;
 }
 .set-2 button.c--destruction:hover:before {
   color: #fff;
+  transition: color ease-in 150ms;
 }
 .set-2 button.c--disabled {
   background-color: #EFEFEF;
@@ -294,6 +299,7 @@ button.a--destruction-ico:before {
   color: #fff;
   box-shadow: none;
   border-radius: 50%;
+  cursor: default;
 }
 .set-2 .a--pag-num:hover {
   border: 1px solid #405665;
