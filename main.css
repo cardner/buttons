@@ -183,7 +183,7 @@ button.a--destruction-ico:before {
 .c--nav-back:before, .c--pag-back:before {
   content: "\e02c";
   text-decoration: none;
-  box-shadow: none;
+  box-shadow: 0px 3px 0px 0px #fff;
   display: inline-block;
 }
 .c--continue:after, .c--pag-forward:after {
@@ -287,4 +287,17 @@ button.a--destruction-ico:before {
   border-radius: 0;
   font-weight: 500;
   box-shadow: 0px 3px 0px 0px currentColor;
+}
+.set-2 .c--pag-current:hover {
+  border-color: #405665;
+  background-color: #405665;
+  color: #fff;
+  box-shadow: none;
+  border-radius: 50%;
+}
+.set-2 .a--pag-num:hover {
+  border: 1px solid #405665;
+  background-color: #fff;
+  box-shadow: none;
+  border-radius: 50%;
 }
