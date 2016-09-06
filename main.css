@@ -32,10 +32,10 @@ main section * {
   font-size: 1.25em;
 }
 .icon:after {
-  padding-left: 0.5em;
+  padding-left: 0.125em;
 }
 .icon:before {
-  padding-right: 0.5em;
+  padding-right: 0.25em;
 }
 .icon:before:hover, .icon:after:hover {
   box-shadow: none;
@@ -543,7 +543,7 @@ button.a--destruction-ico:before {
   box-shadow: none;
   display: inline-block;
   position: relative;
-  padding-left: 6px;
+  padding-left: 2px;
   width: auto;
   right: auto;
   height: auto;
