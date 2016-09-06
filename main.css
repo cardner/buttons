@@ -50,10 +50,10 @@ button {
   font-size: 14px;
   font-weight: 400;
   line-height: 1em;
-  height: 35px;
+  height: 40px;
   border-radius: 3px;
   border: 1px solid #405665;
-  padding: 9px 15px;
+  padding: 12px 20px;
   color: #444;
   background-color: #fff;
   border-collapse: separate;
@@ -352,19 +352,64 @@ button.a--destruction-ico:before {
   border-radius: 3px;
   padding: 0.125em 0.5em;
 }
+.set-3 button {
+  background-color: transparent;
+  position: relative;
+  z-index: 300;
+  overflow: hidden;
+  transition: color ease-in 80ms 300ms,
+              background-color ease-in 200ms 300ms,
+              box-shadow linear 200ms 0ms,
+              border ease-in 200ms 0ms;
+}
 .set-3 button:hover {
   background-color: #476376;
   border-color: #476376;
   box-shadow: 0px 3px 0px 0px #31424E;
   color: #fff;
-  transition: color ease-in 200ms 250ms,
+  transition: color ease-in 100ms 250ms,
               background-color ease-in 200ms 250ms,
               box-shadow linear 200ms;
+}
+.set-3 button:not(.c--disabled):after {
+  content: '';
+  position: absolute;
+  width: 50%;
+  height: 0;
+  bottom: 0;
+  right: 25%;
+  padding:0;
+  border-top-left-radius: 75%;
+  border-top-right-radius: 75%;
+  border-bottom-left-radius: 10%;
+  border-bottom-right-radius: 10%;
+  z-index: -100;
+  background-color: #476376;
+  transition: background-color ease-in 150ms 250ms,
+              border-radius ease-in 150ms 250ms,
+              height linear 150ms 250ms,
+              width linear 150ms 250ms,
+              right linear 150ms 250ms;
+}
+.set-3 button:hover:after {
+  border-top-left-radius: 50%;
+  border-top-right-radius: 50%;
+  border-bottom-left-radius: 0%;
+  border-bottom-right-radius: 0%;
+  height: 200%;
+  width: 100%;
+  right: 0;
+}
+.set-3 button.c--cta {
+  background-color: #405665;
 }
 .set-3 button.c--cta:hover {
   background-color: #476376;
   border-color: #476376;
   box-shadow: 0px 3px 0px 0px #31424E;
+}
+.set-3 button.c--destruction:after {
+  background-color: #D4423B;
 }
 .set-3 button.c--destruction:hover {
   box-shadow: 0px 3px 0px 0px #A3312B;
@@ -372,15 +417,18 @@ button.a--destruction-ico:before {
   background-color: #D4423B;
   border-color: #D4423B;
 }
+.set-3 button.c--destruction:before {
+  transition: color linear 200ms 250ms;
+}
 .set-3 button.c--destruction:hover:before {
   color: #fff;
-  transition: color ease-in 200ms;
 }
 .set-3 button.c--disabled {
   background-color: #EFEFEF;
   border-color: #CCC;
   cursor: not-allowed;
   position: relative;
+  overflow: visible;
 }
 .set-3 .c--disabled i {
   position: absolute;
@@ -425,29 +473,22 @@ button.a--destruction-ico:before {
 }
 
 .set-3 .a--dropdown-content {
-  width: 0;
-  right: 0%;
-  left: 100%;
-  top: 90%;
-  height: 100%;
-  max-height: 0;
-  position: absolute;
-  transition: width linear 100ms,
-              height linear 100ms,
-              position linear 100ms,
-              opacity ease-in 300ms,
-              left linear 100ms,
-              top linear 100ms,
-              right linear 100ms,
-              bottom linear 100ms,
-              max-height linear 200ms,
-              overflow linear 600ms;
+  position: relative;
+  opacity: 0;
+  height: 0;
+  overflow: hidden;
+  display: inline-block;
+  padding: 15px;
+  border-radius: 3px;
+  border: 1px solid #405665;
+  width: 110%;
+  margin-top:10px;
+  box-shadow: 2px 2px 2px 0px #ccc;
 }
 .set-3 .a--dropdown-checkbox:checked ~ .a--dropdown-content {
-  width: 110%;
-  left: 0;
-  right: -10%;
-  max-height:20vw;
+  opacity: 1;
+  height: auto;
+  overflow: visible;
 }
 .set-3 .c--pag-current {
   border: none;
@@ -456,16 +497,11 @@ button.a--destruction-ico:before {
   box-shadow: 0px 3px 0px 0px currentColor;
 }
 .set-3 .c--pag-current:hover {
-  border-color: #405665;
-  background-color: #405665;
-  color: #fff;
-  box-shadow: none;
-  border-radius: 50%;
   cursor: default;
+  box-shadow: 0px 3px 0px 0px currentColor;
 }
 .set-3 .a--pag-num:hover {
-  border: 1px solid #405665;
-  background-color: #fff;
-  box-shadow: none;
-  border-radius: 50%;
+  background-color: #444;
+  color: #fff;
+
 }
