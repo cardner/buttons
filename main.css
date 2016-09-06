@@ -473,7 +473,7 @@ button.a--destruction-ico:before {
   font-family: 'Duo Admin Icons';
   line-height: 1rem;
 }
-.set-3 .c--disabled:hover i {
+.set-3 .c--disabled:hover i, .set-3 .c--disabled:focus i {
   width: 250%;
   height: auto;
   opacity: 1;
@@ -493,7 +493,8 @@ button.a--destruction-ico:before {
   box-shadow: 0px 0px 0px 0px currentColor;
 }
 .set-3 .a--dropdown-content {
-  position: relative;
+  position: absolute;
+  right: -9%;
   opacity: 0;
   height: 0;
   overflow: hidden;
@@ -501,7 +502,7 @@ button.a--destruction-ico:before {
   padding: 0;
   border-radius: 3px;
   border: 1px solid #405665;
-  width: 110%;
+  width: auto;
   max-height: 0;
   margin-top:10px;
   box-shadow: 2px 2px 2px 0px #ccc;
