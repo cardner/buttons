@@ -40,6 +40,11 @@ main section * {
 .icon:before:hover, .icon:after:hover {
   box-shadow: none;
 }
+button.icon-only {
+  padding-left: 12px;
+  padding-right: 6px;
+}
+
 button.icon:after, button.icon:before {
   vertical-align: middle;
 }
@@ -72,6 +77,7 @@ button:focus {
 a {
   color: #444;
   text-decoration: underline;
+  transition: box-shadow linear 150ms;
 }
 a:hover {
   text-decoration: none;
@@ -84,7 +90,6 @@ a:focus {
 button:hover,
 a:hover {
   cursor: pointer;
-  transition: box-shadow linear 150ms;
   box-shadow: 0px 3px 0px 0px currentColor;
 }
 a.c--destruction {
@@ -217,7 +222,7 @@ button.a--destruction-ico:before {
 }
 
 
-/* Section 2 styles */
+/*//////////////// Section 2 styles /////////////*/
 .set-2 a:focus {
   text-shadow: none;
   box-shadow: none;
@@ -343,7 +348,18 @@ button.a--destruction-ico:before {
   border-radius: 50%;
 }
 
-/* Section 3 styles */
+
+/*///////////////// Section 3 styles ////////////////*/
+.set-3 a {
+  transition: color ease-in-out 25ms 25ms,
+              background-color ease-in-out 100ms 0ms,
+              box-shadow ease-in-out 100ms 0ms;
+  text-decoration: none;
+  box-shadow: 0px 1px 0px 0px currentColor;
+}
+.set-3 a:hover {
+  box-shadow: 0px 3px 0px 0px currentColor;
+}
 .set-3 a:focus {
   text-shadow: none;
   box-shadow: none;
@@ -359,8 +375,8 @@ button.a--destruction-ico:before {
   overflow: hidden;
   transition: color ease-in 80ms 300ms,
               background-color ease-in 200ms 300ms,
-              box-shadow linear 200ms 0ms,
-              border ease-in 200ms 0ms;
+              box-shadow ease-in-out 200ms 0ms,
+              border ease-in-out 200ms 0ms;
 }
 .set-3 button:hover {
   background-color: #476376;
@@ -385,13 +401,13 @@ button.a--destruction-ico:before {
   border-bottom-right-radius: 10%;
   z-index: -100;
   background-color: #476376;
-  transition: background-color ease-in 150ms 250ms,
-              border-radius ease-in 150ms 250ms,
-              height linear 150ms 250ms,
-              width linear 150ms 250ms,
-              right linear 150ms 250ms;
+  transition: background-color ease-in-out 150ms 250ms,
+              border-radius ease-in-out 150ms 250ms,
+              height ease-in-out 150ms 250ms,
+              width ease-in-out 150ms 250ms,
+              right ease-in-out 150ms 250ms;
 }
-.set-3 button:hover:after {
+.set-3 button:not(.c--continue):hover:after {
   border-top-left-radius: 50%;
   border-top-right-radius: 50%;
   border-bottom-left-radius: 0%;
@@ -450,18 +466,20 @@ button.a--destruction-ico:before {
 .set-3 .c--disabled i:before {
   position: absolute;
   background-color: #fff;
-  top: 10%;
-  left: -6%;
+  top: 11%;
+  left: -5%;
   content: '\e109';
   font-style: normal;
   font-family: 'Duo Admin Icons';
   line-height: 1rem;
 }
 .set-3 .c--disabled:hover i {
-  width: 200%;
+  width: 250%;
   height: auto;
   opacity: 1;
   visibility: visible;
+  text-align: left;
+  font-style: normal;
 }
 .set-3 button.c--disabled:hover {
   border-bottom-width: 1px;
@@ -471,24 +489,38 @@ button.a--destruction-ico:before {
   cursor: not-allowed;
   color: currentColor;
 }
-
+.set-3 .a--dropdown-trigger {
+  box-shadow: 0px 0px 0px 0px currentColor;
+}
 .set-3 .a--dropdown-content {
   position: relative;
   opacity: 0;
   height: 0;
   overflow: hidden;
   display: inline-block;
-  padding: 15px;
+  padding: 0;
   border-radius: 3px;
   border: 1px solid #405665;
   width: 110%;
+  max-height: 0;
   margin-top:10px;
   box-shadow: 2px 2px 2px 0px #ccc;
+  transition: opacity ease-in 200ms 100ms,
+              height ease-in-out 200ms 0ms,
+              max-height ease-in-out 200ms 0ms,
+              padding ease-in-out 0ms 0ms;
 }
 .set-3 .a--dropdown-checkbox:checked ~ .a--dropdown-content {
   opacity: 1;
   height: auto;
+  max-height: 100vw;
   overflow: visible;
+  padding: 15px;
+}
+.set-3 .a--pag-num,
+.set-3 .c--pag-back,
+.set-3 .c--pag-forward {
+  box-shadow:0px 0px 0px 0px currentColor;
 }
 .set-3 .c--pag-current {
   border: none;
@@ -503,5 +535,181 @@ button.a--destruction-ico:before {
 .set-3 .a--pag-num:hover {
   background-color: #444;
   color: #fff;
+  box-shadow: 0px 3px 0px 0px #405665;
+}
+.set-3 button.c--continue:after {
+  content: "\e049";
+  text-decoration: none;
+  box-shadow: none;
+  display: inline-block;
+  position: relative;
+  padding-left: 6px;
+  width: auto;
+  right: auto;
+  height: auto;
+  left: auto;
+  bottom: auto;
+  border-radius: 0px;
+  background-color: transparent;
+}
+.set-3 .c--continue:before {
+  content: '';
+  position: absolute;
+  width: 50%;
+  height: 0;
+  bottom: 0;
+  right: 25%;
+  padding:0;
+  border-top-left-radius: 75%;
+  border-top-right-radius: 75%;
+  border-bottom-left-radius: 10%;
+  border-bottom-right-radius: 10%;
+  z-index: -100;
+  background-color: #476376;
+  transition: background-color ease-in-out 150ms 250ms,
+              border-radius ease-in-out 150ms 250ms,
+              height ease-in-out 150ms 250ms,
+              width ease-in-out 150ms 250ms,
+              right ease-in-out 150ms 250ms;
+}
+.set-3 .c--continue:hover:before {
+  border-top-left-radius: 50%;
+  border-top-right-radius: 50%;
+  border-bottom-left-radius: 0%;
+  border-bottom-right-radius: 0%;
+  height: 200%;
+  width: 100%;
+  right: 0;
+}
 
+/*//////////////// Section 4 styles /////////////*/
+.set-4 a:focus {
+  text-shadow: none;
+  box-shadow: none;
+  outline: none;
+  border: 1px solid currentColor;
+  border-radius: 3px;
+  padding: 0.125em 0.5em;
+}
+.set-4 button {
+  transition: color ease-in-out 50ms 200ms,
+              background-color ease-in 100ms 200ms,
+              box-shadow linear 200ms,
+              border ease-in 200ms;
+}
+.set-4 button.c--destruction:before {
+  transition: color ease-in-out 50ms 200ms;
+}
+.set-4 button:hover {
+  background-color: #476376;
+  border-color: #476376;
+  box-shadow: 0px 3px 0px 0px #31424E;
+  color: #fff;
+}
+.set-4 button.c--cta:hover {
+  background-color: #476376;
+  border-color: #476376;
+  box-shadow: 0px 3px 0px 0px #31424E;
+}
+.set-4 button.c--destruction:hover {
+  box-shadow: 0px 3px 0px 0px #A3312B;
+  color: #fff;
+  background-color: #D4423B;
+  border-color: #D4423B;
+}
+.set-4 button.c--destruction:hover:before {
+  color: #fff;
+}
+.set-4 button.c--disabled {
+  background-color: #EFEFEF;
+  border-color: #CCC;
+  cursor: not-allowed;
+  position: relative;
+}
+.set-4 .c--disabled i {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+  right: 0;
+  left: 113%;
+  top: 0;
+  transition: opacity ease-in 200ms,
+              background-color linear 50ms;
+  padding: 1em;
+  border: 1px solid currentColor;
+  border-radius: 3px;
+  visibility: hidden;
+  background-color: #fff;
+  line-height: 1.5em;
+}
+.set-4 .c--disabled i:before {
+  position: absolute;
+  background-color: #fff;
+  top: 10%;
+  left: -6%;
+  content: '\e109';
+  font-style: normal;
+  font-family: 'Duo Admin Icons';
+  line-height: 1rem;
+}
+.set-4 .c--disabled:hover i {
+  width: 200%;
+  height: auto;
+  opacity: 1;
+  visibility: visible;
+}
+.set-4 button.c--disabled:hover {
+  border-bottom-width: 1px;
+  border-bottom-color: #CCC;
+  box-shadow: none;
+  font-weight: 400;
+  cursor: not-allowed;
+  color: currentColor;
+}
+
+.set-4 .a--dropdown-content {
+  width: 0;
+  right: 0%;
+  left: 100%;
+  top: 90%;
+  height: 100%;
+  max-height: 0;
+  position: absolute;
+  transition: width linear 100ms,
+              height linear 100ms,
+              position linear 100ms,
+              opacity ease-in 300ms,
+              left linear 100ms,
+              top linear 100ms,
+              right linear 100ms,
+              bottom linear 100ms,
+              max-height linear 200ms,
+              overflow linear 600ms;
+}
+.set-4 .a--dropdown-checkbox:checked ~ .a--dropdown-content {
+  width: 110%;
+  left: 0;
+  right: -10%;
+  max-height:20vw;
+}
+.set-4 .c--pag-current {
+  border: none;
+  border-radius: 0;
+  font-weight: 500;
+  box-shadow: 0px 3px 0px 0px currentColor;
+}
+.set-4 .c--pag-current:hover {
+  border-color: #405665;
+  background-color: #405665;
+  color: #fff;
+  box-shadow: none;
+  border-radius: 50%;
+  cursor: default;
+}
+.set-4 .a--pag-num:hover {
+  border: 1px solid #405665;
+  background-color: #fff;
+  box-shadow: none;
+  border-radius: 50%;
 }
